@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %} Blog {% endblock %}
+{% block blogactive %} active {% endblock %}
+{% block body %}
+    <form action="/blog-post" method="get" class="d-flex" role="search">
+        <input name="query" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+    {% for post in allPosts %}
+    <div class="container my-3">
+    <div class="card">
+        <div class="card-body">
+        <h8 class="card-author">Blog by - {{post.author}}</h8>
+        <h5 class="card-title">{{post.title}}</h5>
+        <p class="card-text">{{post.content | truncatechars:100}}</p>
+        <a href="{{post.slug}}" class="btn btn-primary">Read More</a>
+        </div> 
+    </div>
+    </div>  
+    {% endfor %} 
+{% endblock %}

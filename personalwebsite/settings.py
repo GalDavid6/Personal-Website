@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+from django.contrib.messages import constants as messages
 from decouple import config, Csv
 
 WEATHER_API_KEY= config('WEATHER_API_KEY')
@@ -43,6 +44,7 @@ INSTALLED_APPS = [
     'todolist',
     'weather',
     'dashboard',
+    'blog',
 ]
 
 MIDDLEWARE = [
@@ -127,3 +129,9 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+MESSAGE_TAGS = {
+    messages.ERROR: 'danger',
+}
+
+STATIC_URL = '/static/'
