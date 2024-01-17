@@ -1,57 +1,27 @@
 {% extends 'base.html' %}
-{% block title %} Home {% endblock %}
-{% block head %} <link rel="stylesheet" href="//css//custom.css">{% endblock %}
-{% block homeactive %} active {% endblock %}
+{% block title %} Home {% endblock %} 
+{% block head%}{% endblock %} 
+{% block homeactive %} active {% endblock %} 
 {% block body %}
-<!-- <div class="container mb-5">
-    <div class=”gallery”>
-        <figure class="gallery__item gallery__item--2">
-          <img src="//images//1.jpeg" class="gallery__img" alt="Image 2">
-        </figure>
-        <figure class="gallery__item gallery__item--3">
-          <img src="//images//1.jpeg" class="gallery__img" alt="Image 3">
-        </figure>
+<div class="container">
+  <!-- Cover Photo -->
+  {% load static %}
+  <img src="{% static 'dashboard/NoBadDay.jpg' %}" class="cover-photo rounded" />
+  <!-- Profile Section -->
+  <div class="profile-section">
+    <!-- Profile Photo -->
+    <div class="profile-photo">
+      {% load static %}
+      <img src="{% static 'dashboard/Portfolio1.jpg' %}" class="profile-photo" />
     </div>
+    <!-- Profile-Information -->
+    <div class="about-me">
+      <h3>Hey, I'm Gal David</h3>
+      <p>
+        A Software Developer Focusing on Web Development and Automation, and I'm ready
+        to turn your challenges into opportunities!
+      </p>
+    </div>
+  </div>
 </div>
-
-<div class="container mb-5">
-            <img src="//images//1.jpeg" class="object-fit-fill border rounded" alt="...">
-            <img src="//images//2.jpeg" class="object-fit-fill border rounded" alt="...">
-      <div class="col-md-6 text-from-right">
-        <h2>Welcome to My Portfolio</h2>
-        <p>Some information about me goes here...</p>
-      </div>
-</div> -->
-{% load static %}
-<img src="{% static 'dashboard/test.jpeg' %}" alt="">
-<div class="container mb-5">
-    {% for message in messages %}
-    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
-        <strong>Message:</strong>{{ message }}
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
-    {% endfor %}
-</div>
-    <div class="container">
-    <form action="" method="post">
-    {% csrf_token %}
-    <div class="mb-3">
-        <label for="name" class="form-label">Name</label>
-        <input type="text" class="form-control" name="name" id="name" aria-describedby="name">
-    </div>
-    <div class="mb-3">
-        <label for="email" class="form-label">Email</label>
-        <input type="email" class="form-control" name="email" id="email" aria-describedby="email">
-    </div>
-    <div class="mb-3">
-        <label for="phone" class="form-label">Phone</label>
-        <input type="phone" class="form-control" name="phone" id="phone">
-    </div>
-    <div class="mb-3">
-        <label for="content" class="form-label">Message</label>
-        <textarea class="form-control" id="content" name="content" cols="30" rows="5"></textarea>
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-    </div> 
 {% endblock %}

@@ -5,33 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block title %} {% endblock %} - Personal Website</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'dashboard/style.css' %}">
     {% block head %}{% endblock %}
   </head>
-  <body style="background-color:lightslategray">
-    <nav class="navbar navbar-expand-lg bg-body-tertiary mb-5">
+  <body>
+    <nav class="navbar navbar-expand-lg mb-5">
       <div class="container-fluid">
-        <span class="navbar-brand mb-0 h1">MyPortfolio</span>
-        </button>
+        <span class="navbar-brand">Personal-Website</span>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
               <a class="nav-link {% block homeactive %} {% endblock %}" href="{% url 'dashboard:home' %}">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link {% block todoactive %} {% endblock %}" href="{% url 'todolist:add_todo' %}">Todo List</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link {% block weatheractive %} {% endblock %}" href="{% url 'weather:weather' %}">Weather</a>
+              <a class="nav-link {% block todoactive %} {% endblock %}" href="{% url 'todolist:home_todo' %}">My Todo</a>
             </li>
             <li class="nav-item">
               <a class="nav-link {% block blogactive %} {% endblock %}" href="{% url 'blog:blog' %}">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {% block contactactive %} {% endblock %}" href="{% url 'dashboard:contact_form' %}">Contact Me</a>
             </li>
             <li class="nav-item dropdown position-absolute end-0">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Settings</a>
               <ul class="dropdown-menu dropdown-menu-end">
                 <li><a class="dropdown-item" href="/admin">Admin Panel</a></li>
                 <li><a class="dropdown-item" href="#">Logout</a></li>
-                <li><a class="dropdown-item" href="#">free slot</a></li>
+                <li><a class="dropdown-item" href="#">Free Slot</a></li>
               </ul>
             </li>
           </ul>

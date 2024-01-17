@@ -1,0 +1,163 @@
+/* Gradient Background Styles */
+body {
+    background: #faf1e4;
+    /* Muted, gradient colors, adjust as needed */
+  }
+  
+  /* Text Styles */
+  h1,
+  h2,
+  h3,
+  p {
+    color: #333;
+    /* Darker text color for contrast on the muted background */
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+    /* Add a slight shadow to text for better readability */
+  }  
+
+/* Additional Styles for Navbar */
+.navbar {
+  background: #faf1e4; /* Background color for the navbar */
+  border-bottom: none;
+  text-align: center; /* Center the content within the whole navbar */
+}
+
+.navbar-brand {
+  font-size: 1.2rem;
+  /* Adjust the size as needed */
+}
+
+.navbar-nav {
+  display: flex; /* Ensure the navbar items are in a horizontal line */
+  justify-content: center; /* Center the items horizontally */
+}
+
+.navbar-nav .nav-link {
+  margin: 0 15px; /* Adjust spacing between navbar links */
+  background-color: transparent; /* Keep the background color as it was */
+  color: #333; /* Change text color for the navbar items */
+  transition: color 0.3s ease;
+  /* Smooth color transition on hover */
+}
+
+.navbar-nav .nav-link:hover {
+  color: #154360;
+  font-weight: bold;
+  /* Change color on hover */
+}
+
+/* Cover Photo Styles */
+.cover-photo {
+  width: 100%;
+  height: 35vh; /* Adjust the height as needed */
+  object-fit: cover; /* Ensure the image covers the entire container */
+  /* Add any additional styles for the cover photo here */
+}
+
+/* Profile Section Styles */
+.profile-section {
+  display: flex;
+  align-items: flex-start; /* Change to flex-start to move content to the top */
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 5vh; /* Adjust the margin to move the profile section down */
+}
+
+/* Profile Photo Styles */
+.profile-photo {
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 20px; /* Adjust the margin as needed */
+}
+
+.profile-photo img {
+  width: 350px; /* Adjust the width of the profile picture */
+  height: 350px; /* Adjust the height of the profile picture */
+  object-fit: cover; /* Ensure the image covers the circular container */
+}
+
+/* Profile Information Styles */
+.about-me {
+  max-width: 400px; /* Adjust the maximum width of the information cell */
+  margin-top: 70px;
+  margin-left: 70px;
+  text-align: center;
+}
+
+/* Todo Section Styles */
+.todo-section {
+  width: 50%; /* Set the width of the todo section to 50% of the container */
+  float: left; /* Float the todo section to the left */
+  padding: 20px;
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.todo-list {
+  list-style-type: none; /* Remove default list styles */
+  padding: 0;
+}
+
+.todo-list li {
+  margin-bottom: 5px;
+  background-color: #f8f9fa; /* Light background color for todo items */
+  padding: 5px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.todo-btn {
+  background-color: #28a745; /* Green button color */
+  color: #fff; /* White text color */
+  text-decoration: none;
+  border: none;
+  padding: 2px 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.todo-btn:hover {
+  background-color: #218a39; /* Darker green color on hover */
+}
+
+.delete-btn {
+  background-color: #e74c3c; /* Red button color for delete */
+  color: #fff; /* White text color */
+  text-decoration: none;
+  padding: 3px 6px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+.delete-btn:hover {
+  background-color: #c0392b; /* Darker red color on hover */
+}
+
+/* Weather Section Styles */
+.weather-section {
+  width: 40%; /* Set the width of the weather section to 50% of the container */
+  float: left; /* Float the weather section to the left */
+  padding: 10px;
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.weather-info {
+  background-color: #fff; /* White background for weather information */
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow effect */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .todo-section,
+  .weather-section {
+    width: 100%; /* Set full width on smaller screens */
+    float: none; /* Remove float on smaller screens */
+    margin-bottom: 20px;
+  }
+}
+

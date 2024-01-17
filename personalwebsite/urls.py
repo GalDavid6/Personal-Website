@@ -21,6 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('dashboard.urls', namespace="dashboard")),
     path('todolist/', include('todolist.urls', namespace="todolist")),
-    path('weather/', include('weather.urls', namespace="weather")),
     path('blog/', include("blog.urls", namespace="blog")),
 ]

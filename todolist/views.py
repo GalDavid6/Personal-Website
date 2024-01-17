@@ -1,24 +1,34 @@
 from django.shortcuts import render, redirect
+from django.urls import reverse
 from .models import Todo
+from .utils import handle_post_request
+from .weather_utils import get_weather_data, get_weather_data_default_city
 
 
 # Create your views here.
-def add_todo(request):
-    todo = Todo.objects.all()
-    
+def delete_todo(request, pk):
+    Todo.delete_todo(pk)
+    return redirect(reverse('todolist:home_todo'))
+
+def home_todo(request):
+    all_todos = Todo.get_all_todo()
+    default_city = "Tel Aviv"
+    last_searched_city = request.session.get('last_searched_city', default_city)
+    city_name = last_searched_city
+
     if request.method == 'POST':
-        new_todo = Todo(
-            title = request.POST['title']
-        )
-        new_todo.save()
-        return redirect('/')
-    
+        handle_post_request(request)
+        last_searched_city = request.session.get('last_searched_city', default_city)
+        city_name = last_searched_city
 
-    return render(request, 'todolist.html', {'todos': todo})
+    weather_data = get_weather_data(city_name)
 
+    data = {
+        "city": weather_data['city'],
+        "temperature": weather_data['temperature'],
+        "feels_like": weather_data['feels_like'],
+        "humidity": weather_data['humidity'],
+        "todos": all_todos
+    }
 
-def delete(request, pk):
-    todo = Todo.objects.get(id=pk)
-    todo.delete()
-    return redirect('/')
-
+    return render(request, 'todolist.html', data)

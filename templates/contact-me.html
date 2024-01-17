@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %} Contact Me {% endblock %}
+{% block head %} {% endblock %}
+{% block contactctive %} active {% endblock %}
+{% block body %}
+<div class="container mb-1">
+    <!-- Contact Section -->
+        {% for message in messages %}
+        <!-- Display error messages only if the form is submitted -->
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+            <strong>Message:</strong>{{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>   
+        {% endfor %}
+</div>    
+<div class="container container-spacing">
+    <h2>Contact me:</h2>
+    <form action="" method="post">
+    {% csrf_token %}
+    {{ contact_form.as_p }}
+    <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" name="name" id="name" aria-describedby="name">
+    </div>
+    <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" name="email" id="email" aria-describedby="email">
+    </div>
+    <div class="mb-3">
+        <label for="phone" class="form-label">Phone</label>
+        <input type="phone" class="form-control" name="phone" id="phone">
+    </div>
+    <div class="mb-3">
+        <label for="content" class="form-label">Message</label>
+        <textarea class="form-control" id="content" name="content" cols="30" rows="5"></textarea>
+    </div>
+    <button type="submit" name="btn_contact_form" class="btn btn-primary">Submit</button>
+    </form>
+    </div> 
+{% endblock %}
