@@ -1,12 +1,17 @@
 # Personal-Website (Task list till finish)
 
 Task to do:
-1. finish weather logic
-2. fix search in blog app
-3. add users DB, authentication, permission and login page
-4. bootsrap for all project.
-5. design home page 
-6. remove weather app and add it as logic on dashboard
+1. fix search in blog app.
+2. add users DB, authentication, permission and login page.
+3. bootsrap for all project.
+4. redesign blog
+
+what i did today? 18/1/24
+1. remove unnecessary files
+2. remove the weather app, and add the weather functions to the todo app
+3. Done css todo.html
+4. created utils and weather_utils 
+5. organized and cleaned the code for more modularity and readability
 
 what i did today? 1/1/24
 1. Managing static files(added the option to show image on html and style.css page)

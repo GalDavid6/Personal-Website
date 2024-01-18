@@ -23,7 +23,7 @@
 </div>
 <!-- Weather Section -->
 <div class="container weather-section">
-  <h2>Check the Weather Forecast</h2>
+  <h3>Check the Weather Forecast</h3>
   <form class="d-flex" method="post" action="{% url 'todolist:home_todo' %}">
     {% csrf_token %}
     <input class="form-control me-2" type="search" name="city_name" placeholder="Enter a city" aria-label="Search" />
@@ -33,18 +33,11 @@
   </form>
   <div class="card shadow-0 border mt-3">
     <div class="card-body p-4">
-      <h4 class="mb-1 fw-normal">{{ city | title }}</h4>
-      <p class="mb-0">Temperature: <strong>{{ temperature }}°C</strong></p>
+      <h4 class="mb-1 fw-normal">{{ city | title }} - <span class="text-muted">{{ weather_now }}</span></h4>
+      <p class="mb-2">
+        Temperature: <strong>{{ temperature }}°C</strong>&nbsp;&nbsp;&nbsp;Humidity: <strong>{{ humidity }}%</strong>
+      </p>
       <p>Feels Like: <strong>{{ feels_like }}°C</strong></p>
-      <div class="mb-2"></div> <!-- Create a space between "Feels Like" and "Humidity" -->
-      <p>Humidity: <strong>{{ humidity }}%</strong></p>
-      <div class="mb-4"></div> <!-- Create a big space between temperature and humidity -->
-      <div class="d-flex flex-row align-items-center">
-        <!-- You can customize the weather description and icon here -->
-        <p class="mb-0 me-4">{{ weather_description }}</p>
-        <i class="fas fa-cloud fa-3x" style="color: #eee;"></i>
-      </div>
-    </div>
   </div>
 </div>
 

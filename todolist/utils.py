@@ -8,6 +8,4 @@ def handle_post_request(request):
             Todo.create_todo(title)
 
     if 'city_name' in request.POST and request.POST['city_name']:
-        city_name = request.POST['city_name']
-        if is_valid_city(city_name):
-            request.session['last_searched_city'] = city_name
+        return is_valid_city(request)
